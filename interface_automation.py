@@ -5,14 +5,15 @@ from requests.auth import HTTPBasicAuth
 requests.packages.urllib3.disable_warnings()
 
 def main():
-    HOST = 'ios-xe-mgmt.cisco.com'
+    # actual values removed for security
+    HOST = '[ROUTER_IP]'
     PORT = '9443'
-    USER = 'developer'
-    PASS = 'C1sco12345'
-    
-    base_url = f"https://{HOST}:{PORT}/restconf/data/ietf-interfaces:interfaces"
+    USER = '[ROUTER_USER]'
+    PASS = '[ROUTER_PASS]'
+
+    base_url = f"https://{HOST}/restconf/data/ietf-interfaces:interfaces"
     loopback_url = f"{base_url}/interface=Loopback100"
-    
+
     headers = {
         "Accept": "application/yang-data+json",
         "Content-Type": "application/yang-data+json"
@@ -42,9 +43,9 @@ def main():
             auth=HTTPBasicAuth(USER, PASS),
             headers=headers,
             data=json.dumps(payload),
-            verify=False
+            verify=False,
+            timeout=10
         )
-        
 
         if put_response.status_code in [201, 204]:
             print(f"SUCCESS: Loopback100 configured! (Status Code: {put_response.status_code})")

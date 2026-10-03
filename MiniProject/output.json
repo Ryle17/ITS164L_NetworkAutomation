@@ -1,0 +1,19 @@
+{
+    "results": [
+        {
+            "hostname": "cisco-rtr-01",
+            "ip": "192.168.1.10",
+            "status": "UP"
+        },
+        {
+            "hostname": "cisco-sw-01",
+            "ip": "192.168.1.20",
+            "status": "UP"
+        },
+        {
+            "hostname": "cisco-fw-01",
+            "ip": "192.168.1.30",
+            "status": "DOWN"
+        }
+    ]
+}

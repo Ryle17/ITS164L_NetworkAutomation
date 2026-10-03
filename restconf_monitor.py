@@ -6,11 +6,12 @@ requests.packages.urllib3.disable_warnings()
 
 def main():
     # IOS XE router credentials
-    username = "admin"
-    password = "Cisco123!"
+    # actual values removed for security
+    username = "[ROUTER_USER]"
+    password = "[ROUTER_PASS]"
 
     # IOS XE router address from Sandbox topology
-    host = "10.10.20.50"
+    host = "[ROUTER_IP]"
 
     # RESTCONF resource
     url = f"https://{host}/restconf/data/ietf-interfaces:interfaces"
